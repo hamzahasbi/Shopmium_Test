@@ -1,2 +1,81 @@
-<h1>PositionsController#new</h1>
-<p>Find me in app/views/positions_controller/new.html.erb</p>
+<div class="container" style = "background-image:url(https://png.pngtree.com/thumb_back/fw800/back_pic/04/48/50/00585a3568a0a7d.jpg) ;">
+  <form action="/positions_controller/add" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <div class="row">
+    <h2> <font color="#0080FF"><strong><i>This will Create a new Shop</i></strong></font></h2>
+  </div>
+
+    <div class="row form-group">
+        <div class="input-group">
+            <span class="input-group-addon primary"><span class="glyphicon glyphicon-info-sign"></span></span>
+            <input name="chain" type="text" class="form-control" placeholder="Chain">
+        </div>
+    </div>
+
+    <div class="row form-group">
+        <div class="input-group">
+            <input name="name" type="text" class="form-control" placeholder="Name">
+            <span class="input-group-addon success"><span class="glyphicon glyphicon-info-sign"></span></span>
+        </div>
+    </div>
+
+    <div class="row form-group">
+        <div class="input-group">
+            <span class="input-group-addon primary"><span class="glyphicon glyphicon-info-sign"></span></span>
+            <input name="zip" type="text" class="form-control" placeholder="Zip">
+        </div>
+    </div>
+
+    <div class="row form-group">
+        <div class="input-group">
+            <input name="adress" type="text" class="form-control" placeholder="Adress">
+            <span class="input-group-addon success"><span class="glyphicon glyphicon-info-sign"></span></span>
+        </div>
+    </div>
+
+    <div class="row form-group">
+        <div class="input-group">
+            <span class="input-group-addon primary"><span class="glyphicon glyphicon-info-sign"></span></span>
+            <input name="latitude" type="text" class="form-control" placeholder="Latitude">
+        </div>
+    </div>
+
+    <div class="row form-group">
+        <div class="input-group">
+            <input name="longitude" type="text" class="form-control" placeholder="Longitude">
+            <span class="input-group-addon success"><span class="glyphicon glyphicon-info-sign"></span></span>
+        </div>
+    </div>
+
+    <div class="row form-group">
+        <div class="input-group">
+            <span class="input-group-addon primary"><span class="glyphicon glyphicon-info-sign"></span></span>
+            <input name="city" type="text" class="form-control" placeholder="City">
+        </div>
+    </div>
+
+    <div class="row form-group">
+        <div class="input-group">
+            <input name="phone" type="text" class="form-control" placeholder="Phone">
+            <span class="input-group-addon success"><span class="glyphicon glyphicon-info-sign"></span></span>
+        </div>
+    </div>
+
+
+    <div class="row form-group">
+        <div class="input-group">
+            <span class="input-group-addon primary"><span class="glyphicon glyphicon-info-sign"></span></span>
+            <input name="country_code" type="text" class="form-control" placeholder="County_code">
+        </div>
+    </div>
+
+    <p >
+
+     <input  type="submit" class="btn btn-success" style = "margin-left: 80%" value="Commit" name="Commit">
+
+        <%= link_to('<button type="button" class="btn btn-danger" style = "margin-left: 20px">Back</button>'.html_safe, {:action => 'index'}, :class => "action index") %>
+
+  </p>
+</form>
+</div>
+

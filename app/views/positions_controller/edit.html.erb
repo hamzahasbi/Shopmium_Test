@@ -1,4 +1,6 @@
 <div class="container" style = "background-image:url(https://png.pngtree.com/thumb_back/fw800/back_pic/04/48/50/00585a3568a0a7d.jpg) ;">
+  <form action="/positions_controller/update" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
   <div class="row">
     <h2>This will Modify The Shop : <font color="#0080FF"><strong><i><%= @target.name %></i></strong></font></h2>
   </div>
@@ -24,6 +26,7 @@
         </div>
     </div>
 
+    <input type="hidden" name="id" value= <%= @target.id %>>
     <div class="row form-group">
         <div class="input-group">
             <input name="adress" type="text" class="form-control" placeholder="Adress">
@@ -34,7 +37,7 @@
     <div class="row form-group">
         <div class="input-group">
             <span class="input-group-addon primary"><span class="glyphicon glyphicon-info-sign"></span></span>
-            <input name="latittude" type="text" class="form-control" placeholder="Latitude">
+            <input name="latitude" type="text" class="form-control" placeholder="Latitude">
         </div>
     </div>
 
@@ -68,8 +71,12 @@
     </div>
 
     <p >
-        <button type="button" class="btn btn-success" style = "margin-left: 80%">Submit Changes    </button>
-        <button type="button" class="btn btn-danger" style = "margin-left: 20px">Back</button>
+
+     <input  type="submit" class="btn btn-success" style = "margin-left: 80%" value="Submit Changes" name="Commit">
+
+        <%= link_to('<button type="button" class="btn btn-danger" style = "margin-left: 20px">Back</button>'.html_safe, {:action => 'index'}, :class => "action index") %>
+
   </p>
+</form>
 </div>
 
