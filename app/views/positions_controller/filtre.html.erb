@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-        <h4>LISTE DES SHOPS DISPONIBLES !
+        <h4>LISTE DES SHOPS FILTRES!
             <style type="text/css" media="screen">
                 .btn-glyphicon { padding:2px; background:#ffffff; margin-right:2px; }
                 .btn-label {position: relative;left: -12px;display: inline-block;padding: 6px 12px;background: rgba(0,0,0,0.15);border-radius: 3px 0 0 3px;}
@@ -12,11 +12,6 @@
                 .btn { margin-bottom:10px; }
 
             </style>
-
-            <a style="margin-left: 10%" class="btn btn-success btn-labeled" href="new" role="button">
-                <span class="btn-label"><i class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></i></span>Ajouter un Shop</a>
-            <a class="btn btn-success btn-labeled" href="search" role="button">
-                <span class="btn-label"><i class="glyphicon glyphicon-info-sign"></i></span>Filter les données</a>
         </h4>
 
         <div class="table-responsive">
@@ -38,7 +33,7 @@
                        <th>Delete</th>
                    </thead>
     <tbody>
-    <% @list.each do |item| %>
+    <% @valid_list.each do |item| %>
     <tr>
 
     <td><%= item.name.to_s =%></td>
