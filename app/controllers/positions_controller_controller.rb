@@ -52,14 +52,17 @@ class PositionsControllerController < ApplicationController
   end
 
   def filtre
-    lon = params[:longitude].to_f
-    lat = params[:latitude].to_f
-    current_location = Geokit::LatLng.new(lat,lon)
-    @list_of_shops = Shop.all
-    @valid_list = Array.new
-    @list_of_shops.each do |item|
-      destination = item.latitude.to_s + "," +item.longitude.to_s
-      @valid_list << item if current_location.distance_to(destination) <= params[:nombre].to_f
+    if params[:longitude] == "" or params[:latitude] == "" or params[:nombre] == "" then redirect_to({:action => 'search'})
+    else
+      lon = params[:longitude].to_f
+      lat = params[:latitude].to_f
+      current_location = Geokit::LatLng.new(lat,lon)
+      @list_of_shops = Shop.all
+      @valid_list = Array.new
+      @list_of_shops.each do |item|
+        destination = item.latitude.to_s + "," +item.longitude.to_s
+        @valid_list << item if current_location.distance_to(destination) <= params[:nombre].to_f
+      end
     end
   end
 end
