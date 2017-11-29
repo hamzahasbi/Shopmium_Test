@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  root :to => "positions_controller#index"
+
   get 'positions_controller/index'
 
   get 'positions_controller/new'
